@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Prim算法, Android Linux CCF-CSP js html css nodejs java c/c++ python php 数据结构与算法">
-    <meta name="description" content="Prim算法Prim算法是一种产生最小生成树的算法。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克（英语：Vojtěch Jarník）发现；并在1957年由美国计算机科学家罗伯特·普里姆（英语：Robert C. Prim）独立发现；1">
+    <meta name="keywords" content="Ship_model_racing, Android Linux CCF-CSP js html css nodejs java c/c++ python php 数据结构与算法">
+    <meta name="description" content="中国海洋大学第十届船摸大赛分享简要类别: 竞速类分享时间: 2019/11/3一．细读规则
+规则：
+船只由选手自行设计制作完成。所需材料统一提供，选手可自备符合要求的船体及马达。船体放入两瓶农夫山泉负重完成。以行进规定长度水域（长10m，宽">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Prim算法 | Cherrison</title>
+    <title>Ship_model_racing | Cherrison</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,13 +306,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Prim算法
+                        Ship_model_racing
                     </div>
                 </div>
             </div>
@@ -422,8 +424,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">
-                                <span class="chip bg-color">数据结构与算法 最小生成树</span>
+                            <a href="/tags/%E8%88%B9%E6%91%B8%E7%AB%9E%E9%80%9F/">
+                                <span class="chip bg-color">船摸竞速</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%88%B9%E6%91%B8%E5%A4%A7%E8%B5%9B/">
+                                <span class="chip bg-color">船摸大赛</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%88%86%E4%BA%AB/">
+                                <span class="chip bg-color">分享</span>
                             </a>
                         
                     </div>
@@ -434,8 +444,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" class="post-category">
-                                数据结构与算法基础
+                            <a href="/categories/%E7%AC%AC%E5%8D%81%E5%B1%8A%E8%88%B9%E6%91%B8%E5%A4%A7%E8%B5%9B/" class="post-category">
+                                第十届船摸大赛
                             </a>
                         
                     </div>
@@ -447,7 +457,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-05-23
+                    2019-11-03
                 </div>
                 
 
@@ -456,14 +466,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    272
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    3 Min
                 </div>
                 
 				
@@ -479,11 +489,63 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Prim算法"><a href="#Prim算法" class="headerlink" title="Prim算法"></a>Prim算法</h1><p><code>Prim</code>算法是一种产生最小生成树的算法。该算法于<code>1930</code>年由捷克数学家沃伊捷赫·亚尔尼克（英语：<code>Vojtěch Jarník</code>）发现；并在1957年由美国计算机科学家罗伯特·普里姆（英语：<code>Robert C. Prim</code>）独立发现；<code>1959</code>年，艾兹格·迪科斯彻再次发现了该算法。</p>
-<p><code>Prim</code>算法从任意一个顶点开始，每次选择一个与当前顶点集最近的一个顶点，并将两顶点之间的边加入到树中。<code>Prim</code>算法在找当前最近顶点时使用到了贪婪算法。</p>
-<h2 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a><strong>算法流程：</strong></h2><blockquote>
-<p>1.在一个加权连通图中，顶点集合V，边集合为E</br><br>2.任意选出一个点作为初始顶点,标记为visit,计算所有与之相连接的点的距离，选择距离最短的，标记visit.</br><br>3.重复以下操作，直到所有点都被标记为visit：在剩下的点钟，计算与已标记visit点距离最小的点，标记visit,证明加入了最小生成树。</p>
+                <h1 id="中国海洋大学第十届船摸大赛分享"><a href="#中国海洋大学第十届船摸大赛分享" class="headerlink" title="中国海洋大学第十届船摸大赛分享"></a>中国海洋大学第十届船摸大赛分享</h1><h2 id="简要"><a href="#简要" class="headerlink" title="简要"></a>简要</h2><h3 id="类别-竞速类"><a href="#类别-竞速类" class="headerlink" title="类别: 竞速类"></a>类别: 竞速类</h3><h3 id="分享时间-2019-11-3"><a href="#分享时间-2019-11-3" class="headerlink" title="分享时间: 2019/11/3"></a>分享时间: 2019/11/3</h3><h2 id="一．细读规则"><a href="#一．细读规则" class="headerlink" title="一．细读规则"></a>一．细读规则</h2><p><img src="https://s2.ax1x.com/2019/11/03/KXX3TK.jpg" alt="KXX3TK.jpg"></p>
+<p><strong>规则：</strong></p>
+<p>船只由选手<code>自行设计</code>制作完成。所需材料统一提供，选手可自备符合要求的船体及马达。船体放入两瓶农夫山泉负重完成。以行进规定长度水域（长10m，宽1m的长方形水域）所用时间为评分基础。（注：比赛途中禁止任何形式触碰船只)。</p>
+<p><strong>评分细则：</strong></p>
+<blockquote>
+<p>A. 若比赛中途翻船或未触碰终点线则成绩无效。</p>
 </blockquote>
+<blockquote>
+<p>B. 比赛在静水中进行且由两人计时，成绩取平均。</p>
+</blockquote>
+<blockquote>
+<p>C. 每组选手有两次比赛机会，取最佳成绩。若两次成绩均无效，则为无成绩。</p>
+</blockquote>
+<h2 id="二-常见船型介绍"><a href="#二-常见船型介绍" class="headerlink" title="二. 常见船型介绍"></a>二. 常见船型介绍</h2><ol>
+<li>单/双体:由于常规动力的能源限制问题、阻力问题，船型多采用单体和极少数的双体。</li>
+</ol>
+<ol start="2">
+<li><p>船型:无论使用单体或是双体，船型都是流线细长型，最重要地是船体必须对称。</p>
+</li>
+<li><p>船头：船头要是破水性良好的尖状，尽可能地减少船体在水中的阻力，</p>
+</li>
+<li><p>船底：尖底，圆底，平底，各有优缺点。尖底阻力最小，但容易翻；平底最稳，但阻力稍大；圆底在二者之间。</p>
+</li>
+<li><p>载重空间：要留出合适的空间盛放水瓶。空间太大，水瓶摇晃导致不稳；空间太小水瓶放不下。</p>
+</li>
+</ol>
+<p><img src="https://s2.ax1x.com/2019/11/03/KXqVFe.png" alt="KXqVFe.png"></p>
+<p><img src="https://s2.ax1x.com/2019/11/03/KXqAoD.png" alt="KXqAoD.png"></p>
+<h2 id="三-材料工具和方法"><a href="#三-材料工具和方法" class="headerlink" title="　三. 材料工具和方法"></a>　三. 材料工具和方法</h2><h3 id="材料与工具"><a href="#材料与工具" class="headerlink" title="材料与工具"></a>材料与工具</h3><p><img src="https://s2.ax1x.com/2019/11/03/KXL4vn.png" alt="KXL4vn.png"></p>
+<h2 id="四．制作方法"><a href="#四．制作方法" class="headerlink" title="四．制作方法"></a>四．制作方法</h2><ol>
+<li><p>竞速船体使用雪弗板为原材料，对雪弗板对称裁剪，确保剪裁后能粘成立体的船。</p>
+</li>
+<li><p>用热熔胶、502胶水将裁剪好的雪弗板粘连成流线型的对称船体。</p>
+</li>
+<li><p>在其中固定电机，轴系和电池盒。</p>
+</li>
+<li><p>锡焊电池盒和电机。</p>
+</li>
+</ol>
+<h2 id="五．还能更好吗？"><a href="#五．还能更好吗？" class="headerlink" title="五．还能更好吗？"></a>五．还能更好吗？</h2><h4 id="小分享点击"><a href="#小分享点击" class="headerlink" title="小分享点击"></a>小分享<a href="https://www.cheery.pro/VIDEO0064_s01.mp4">点击</a></h4><p>答案当然是<code>有</code></p>
+<h3 id="买更好的材料"><a href="#买更好的材料" class="headerlink" title="买更好的材料"></a>买更好的材料</h3><h4 id="更好的螺旋桨和轴系"><a href="#更好的螺旋桨和轴系" class="headerlink" title="　更好的螺旋桨和轴系"></a>　更好的螺旋桨和轴系</h4><p><img src="https://s2.ax1x.com/2019/11/03/KXqkdO.jpg" alt="KXqkdO.jpg"></p>
+<p> 想要或得更好的成绩吗？除了制作的更好外，如果你有｀更好的装备｀那也是一个方法</p>
+<p><strong>下面是一些之前买过的链接</strong><br>*　D轴 红磨370马达五色电机11.1V 63000转<a href="http://m.tb.cn/h.WFSBCwH" target="_blank" rel="noopener">http://m.tb.cn/h.WFSBCwH</a><br>*　小电线0.3平方镀锡铜芯线直流电路细导线<a href="http://m.tb.cn/h.WF76DKn" target="_blank" rel="noopener">http://m.tb.cn/h.WF76DKn</a><br>*　暴力款380电机 铁后盖 超高速马达3.7-7.2V 2.3MM轴径<a href="http://m.tb.cn/h.WF71WoZ" target="_blank" rel="noopener">http://m.tb.cn/h.WF71WoZ</a><br>*　正品双杰管形测力计LTZ-100 200 300N弹簧拉力棒/拉力测试仪<a href="http://m.tb.cn/h.WF76i9x" target="_blank" rel="noopener">http://m.tb.cn/h.WF76i9x</a><br>*　老虎钳8寸 尖嘴钳6寸 斜口钳5寸多功能省力电工钳子钢丝钳断线钳<a href="http://m.tb.cn/h.WFSBc45" target="_blank" rel="noopener">http://m.tb.cn/h.WFSBc45</a><br>*　调温热风枪数显手持汽车贴膜烤枪工具烘枪工业热吹风机<a href="http://m.tb.cn/h.WFSAhlE" target="_blank" rel="noopener">http://m.tb.cn/h.WFSAhlE</a></p>
+<h3 id="可以自己搭建一个小水池"><a href="#可以自己搭建一个小水池" class="headerlink" title="可以自己搭建一个小水池"></a>可以自己搭建一个小水池</h3><blockquote>
+<p>用大家公用的水池的话人太多也不方便</p>
+</blockquote>
+<p><img src="https://s2.ax1x.com/2019/11/03/KXqPL6.png" alt="KXqPL6.png"></p>
+<h3 id="提升工艺水平"><a href="#提升工艺水平" class="headerlink" title="提升工艺水平"></a>提升工艺水平</h3><p><img src="https://s2.ax1x.com/2019/11/03/KXqFeK.png" alt="KXqFeK.png"></p>
+<h3 id="更好的测速方法"><a href="#更好的测速方法" class="headerlink" title="更好的测速方法"></a>更好的测速方法</h3><p>推荐一个叫做　<code>巧影</code>　软件，　可以用来通过拍摄视频的方法，　测量时间</p>
+<p>精度可以精确到0.01ｓ</p>
+<h3 id="分析一下"><a href="#分析一下" class="headerlink" title="分析一下"></a>分析一下</h3><p>常规组：大概是7s这个速度国奖门槛，<code>校赛完全没有问题</code> 加速度要达到0.41m/s^2 船静止下推力要达到1.42m/s时船的阻力加0.6N.<br>根据这一思路，利用材料 自己做好的小水槽 精度较高测力计 细线 滑轮 光电门。</p>
+<ol>
+<li>先用测出船在3.46m/s 时的阻力。（不断改进船型，使之减小）</li>
+<li>在水槽中，用线拉着船 测出船的 推力。（不断改进马达及桨 动力系统，使之增大）</li>
+<li>重复2 3步骤 不断改进</li>
+</ol>
+<p>（这一想法的缘由：平时没有提供方测速，这种方法只需要测力 就能判断 船10s的大概成绩，测试可和做船在同一地方进行。调试修改效率高，而且测试船体是否翻沉无需找水池，做好船就可以放到旁边的自制小水池里测试，提高了效率）</p>
 
             </div>
             <hr/>
@@ -509,7 +571,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.cheery.pro/index.html/2019/05/23/Prim%E7%AE%97%E6%B3%95/">https://www.cheery.pro/index.html/2019/05/23/Prim%E7%AE%97%E6%B3%95/</a>
+                    <a href="https://www.cheery.pro/index.html/2019/11/03/Ship-model-racing/">https://www.cheery.pro/index.html/2019/11/03/Ship-model-racing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -547,8 +609,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">
-                                    <span class="chip bg-color">数据结构与算法 最小生成树</span>
+                                <a href="/tags/%E8%88%B9%E6%91%B8%E7%AB%9E%E9%80%9F/">
+                                    <span class="chip bg-color">船摸竞速</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%88%B9%E6%91%B8%E5%A4%A7%E8%B5%9B/">
+                                    <span class="chip bg-color">船摸大赛</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%88%86%E4%BA%AB/">
+                                    <span class="chip bg-color">分享</span>
                                 </a>
                             
                         </div>
@@ -977,42 +1047,58 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2019/05/23/Huffman%E6%A0%91%E4%B8%8EHuffman%E7%BC%96%E7%A0%81/">
+                <a href="/2019/11/03/Ship-model-racing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Huffman树与Huffman编码">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Ship_model_racing">
                         
-                        <span class="card-title">Huffman树与Huffman编码</span>
+                        <span class="card-title">Ship_model_racing</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            中国海洋大学第十届船摸大赛分享简要类别: 竞速类分享时间: 2019/11/3一．细读规则
+规则：
+船只由选手自行设计制作完成。所需材料统一提供，选手可自备符合要求的船体及马达。船体放入两瓶农夫山泉负重完成。以行进规定长度水域（长10m，宽
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-03
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Cherrison
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%AC%E5%8D%81%E5%B1%8A%E8%88%B9%E6%91%B8%E5%A4%A7%E8%B5%9B/" class="post-category">
+                                    第十届船摸大赛
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
+                    <a href="/tags/%E8%88%B9%E6%91%B8%E7%AB%9E%E9%80%9F/">
+                        <span class="chip bg-color">船摸竞速</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%88%B9%E6%91%B8%E5%A4%A7%E8%B5%9B/">
+                        <span class="chip bg-color">船摸大赛</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%88%86%E4%BA%AB/">
+                        <span class="chip bg-color">分享</span>
                     </a>
                     
                 </div>
@@ -1026,31 +1112,35 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/05/23/Kruskal%E7%AE%97%E6%B3%95/">
+                <a href="/2019/11/02/advanced-spoken-english/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Kruskal算法">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="advanced_spoken_english(高级口语)">
                         
-                        <span class="card-title">Kruskal算法</span>
+                        <span class="card-title">advanced_spoken_english(高级口语)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            高级口语–   Role_Play简要展示时间:   第八周我的角色:   小雨台词** 台词内容为第一季第16集: 17:15-22.20 **
+
+孩子们一起: 还等妈妈, 饿死了
+
+I’m too hungry to wait for 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    数据结构与算法基础
+                            <a href="/categories/Oral-English/" class="post-category">
+                                    Oral_English
                                 </a>
                             
                             
@@ -1060,8 +1150,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">
-                        <span class="chip bg-color">数据结构与算法 最小生成树</span>
+                    <a href="/tags/%E8%8B%B1%E8%AF%AD/">
+                        <span class="chip bg-color">英语</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8F%A3%E8%AF%AD/">
+                        <span class="chip bg-color">口语</span>
+                    </a>
+                    
+                    <a href="/tags/English/">
+                        <span class="chip bg-color">English</span>
                     </a>
                     
                 </div>
