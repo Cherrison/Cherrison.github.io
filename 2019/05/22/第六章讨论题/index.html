@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第六章讨论题 | 我很弱，但我要坚强！</title>
+    <title>第六章讨论题 | Cherrison</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -27,7 +27,8 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-hopscotch.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -39,7 +40,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">我很弱，但我要坚强！</span>
+                    <span class="logo-span">Cherrison</span>
                 </a>
             </div>
             
@@ -137,7 +138,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">我很弱，但我要坚强！</div>
+        <div class="logo-name">Cherrison</div>
         <div class="logo-desc">
             
             写写博客记录生活
@@ -447,14 +448,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1k
+                    932
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    4 Min
+                    3 Min
                 </div>
                 
 				
@@ -473,8 +474,30 @@
                 <h1 id="第六章-树和二叉树"><a href="#第六章-树和二叉树" class="headerlink" title="第六章 树和二叉树"></a><strong><a href="https://cherrison.github.io/2019/05/22/%E7%AC%AC%E5%85%AD%E7%AB%A0%E8%AE%A8%E8%AE%BA%E9%A2%98/" target="_blank" rel="noopener">第六章 树和二叉树</a></strong></h1><h2 id="1、证明：一棵二叉树的所有终端结点（叶结点）在前序序列、中序序列以及后序序列中都按相同的相对位置出现"><a href="#1、证明：一棵二叉树的所有终端结点（叶结点）在前序序列、中序序列以及后序序列中都按相同的相对位置出现" class="headerlink" title="1、证明：一棵二叉树的所有终端结点（叶结点）在前序序列、中序序列以及后序序列中都按相同的相对位置出现."></a>1、证明：一棵二叉树的所有终端结点（叶结点）在前序序列、中序序列以及后序序列中都按相同的相对位置出现.</h2><blockquote>
 <p>前序遍历是“根一左一右”中序遍历是“左一根一右”后序遍历是“左一右一根”。三种遍历中只是访问“根”结点的时机不同对左右子树均是按先左后右顺序来遍历的因此所有叶子都按相同的相对位置出现。</p>
 </blockquote>
-<h2 id="2、试写一个判定所给定二叉树是否为二叉排序树的算法，设此二叉树以二叉链表为存储结构，且树中结点的关键字均不同。"><a href="#2、试写一个判定所给定二叉树是否为二叉排序树的算法，设此二叉树以二叉链表为存储结构，且树中结点的关键字均不同。" class="headerlink" title="2、试写一个判定所给定二叉树是否为二叉排序树的算法，设此二叉树以二叉链表为存储结构，且树中结点的关键字均不同。"></a>2、试写一个判定所给定二叉树是否为二叉排序树的算法，设此二叉树以二叉链表为存储结构，且树中结点的关键字均不同。</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">IsSearchTree</span><span class="params">(<span class="keyword">const</span> BTNode *t)</span></span>&#123;</span><br><span class="line"><span class="keyword">if</span>(!t) <span class="comment">//空二叉树情况</span></span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(!(t-&gt;lchild) &amp;&amp; !(t-&gt;rchild))<span class="comment">//左右子树都无情况</span></span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>((t-&gt;lchild) &amp;&amp; !(t-&gt;rchild))&#123;<span class="comment">//只有左子树情况</span></span><br><span class="line"><span class="keyword">if</span>(t-&gt;lchild-&gt;data&gt;t-&gt;data)</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">return</span> IsSearchTree(t-&gt;lchild);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>((t-&gt;rchild) &amp;&amp; !(t-&gt;lchild))&#123;<span class="comment">//只有右子树情况</span></span><br><span class="line"><span class="keyword">if</span>(t-&gt;rchild-&gt;data&lt;t-&gt;data)</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">return</span> IsSearchTree(t-&gt;rchild);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123; <span class="comment">//左右子树全有情况</span></span><br><span class="line"><span class="keyword">if</span>((t-&gt;lchild-&gt;data&gt;t-&gt;data) ||(t-&gt;rchild-&gt;data&lt;t-&gt;data))</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">return</span> IsSearchTree(t-&gt;lchild) &amp;&amp; IsSearchTree(t-&gt;rchild);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="2、试写一个判定所给定二叉树是否为二叉排序树的算法，设此二叉树以二叉链表为存储结构，且树中结点的关键字均不同。"><a href="#2、试写一个判定所给定二叉树是否为二叉排序树的算法，设此二叉树以二叉链表为存储结构，且树中结点的关键字均不同。" class="headerlink" title="2、试写一个判定所给定二叉树是否为二叉排序树的算法，设此二叉树以二叉链表为存储结构，且树中结点的关键字均不同。"></a>2、试写一个判定所给定二叉树是否为二叉排序树的算法，设此二叉树以二叉链表为存储结构，且树中结点的关键字均不同。</h2><pre class="line-numbers language-CPP"><code class="language-CPP">int IsSearchTree(const BTNode *t){
+    if(!t) //空二叉树情况
+        return 1;
+    else if(!(t->lchild) && !(t->rchild))//左右子树都无情况
+        return 1;
+    else if((t->lchild) && !(t->rchild)){//只有左子树情况
+        if(t->lchild->data>t->data)
+            return 0;
+        else
+        return IsSearchTree(t->lchild);
+    }
+    else if((t->rchild) && !(t->lchild)){//只有右子树情况
+        if(t->rchild->data<t->data)
+            return 0;
+        else
+            return IsSearchTree(t->rchild);
+    }
+    else{ //左右子树全有情况
+        if((t->lchild->data>t->data) ||(t->rchild->data<t->data))
+            return 0;
+        else
+            return IsSearchTree(t->lchild) && IsSearchTree(t->rchild);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3、证明若二叉排序树中的一个节点存在两个孩子，则它的中序后继节点没有左孩子，且它的中序前趋节点没有右孩子。"><a href="#3、证明若二叉排序树中的一个节点存在两个孩子，则它的中序后继节点没有左孩子，且它的中序前趋节点没有右孩子。" class="headerlink" title="3、证明若二叉排序树中的一个节点存在两个孩子，则它的中序后继节点没有左孩子，且它的中序前趋节点没有右孩子。"></a>3、证明若二叉排序树中的一个节点存在两个孩子，则它的中序后继节点没有左孩子，且它的中序前趋节点没有右孩子。</h2><p><img src="https://images2017.cnblogs.com/blog/1258764/201711/1258764-20171104143533623-1370277977.png" alt=""></p>
 <ul>
 <li>前序遍历：45 12 3 37 24 53 100 61 90 78</li>
@@ -486,8 +509,53 @@
 <h2 id="4、给定二叉树-T，其中任意两个结点-p、q，设计算法，求-p-和-q-最近的共同祖先。"><a href="#4、给定二叉树-T，其中任意两个结点-p、q，设计算法，求-p-和-q-最近的共同祖先。" class="headerlink" title="4、给定二叉树 T，其中任意两个结点 p、q，设计算法，求 p 和 q 最近的共同祖先。"></a>4、给定二叉树 T，其中任意两个结点 p、q，设计算法，求 p 和 q 最近的共同祖先。</h2><blockquote>
 <p>求解思路:先判断给定的两个结点是否有一个为根结点，如果有一个结点为根结点，则直接返回根结点。否则判断两个结点是否在同一颗子树，如果不在，则它们最近的公共祖先结点也为根结点；如果同在左子树，重复上述过程；否则在右子树中重复上述过程。</p>
 </blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">struct TreeNode* <span class="title">Find</span><span class="params">(struct TreeNode* root,<span class="keyword">int</span> val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(root-&gt;val == val)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>* <span class="title">found</span> = <span class="title">Find</span>(<span class="title">root</span>-&gt;<span class="title">left</span>,<span class="title">val</span>);</span></span><br><span class="line">    <span class="keyword">if</span>(found != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> found;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Find(root-&gt;right,val);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">struct TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(struct TreeNode* root, struct TreeNode* p, </span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">struct TreeNode* q)</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>* <span class="title">pInLeft</span> = <span class="title">Find</span>(<span class="title">root</span>-&gt;<span class="title">left</span>,<span class="title">p</span>-&gt;<span class="title">val</span>);</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>* <span class="title">qInLeft</span> = <span class="title">Find</span>(<span class="title">root</span>-&gt;<span class="title">left</span>,<span class="title">q</span>-&gt;<span class="title">val</span>);</span></span><br><span class="line">    <span class="keyword">if</span>(p == root || q == root)   <span class="comment">//判断给定结点是否是根结点</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果给定结点不 同在左子树，返回根结点</span></span><br><span class="line">    <span class="keyword">if</span>(pInLeft == <span class="literal">NULL</span> &amp;&amp; qInLeft != <span class="literal">NULL</span>)  </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果给定结点不 同在右子树，返回根结点</span></span><br><span class="line">    <span class="keyword">if</span>(pInLeft != <span class="literal">NULL</span> &amp;&amp; qInLeft == <span class="literal">NULL</span>)   </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pInLeft != <span class="literal">NULL</span>)   <span class="comment">//给定结点同在左子树</span></span><br><span class="line">    &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> lowestCommonAncestor(root-&gt;left,p,q);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>    <span class="comment">//给定结点同在右子树</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> lowestCommonAncestor(root-&gt;right,p,q);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-CPP"><code class="language-CPP">struct TreeNode* Find(struct TreeNode* root,int val)
+{
+    if(root == NULL)
+    {
+        return NULL;
+    }
+    if(root->val == val)
+    {
+        return root;
+    }
+    struct TreeNode* found = Find(root->left,val);
+    if(found != NULL)
+    {
+        return found;
+    }
+    return Find(root->right,val);
+}
 
+struct TreeNode* lowestCommonAncestor(struct TreeNode* root, struct TreeNode* p, 
+
+struct TreeNode* q) {
+    struct TreeNode* pInLeft = Find(root->left,p->val);
+    struct TreeNode* qInLeft = Find(root->left,q->val);
+    if(p == root || q == root)   //判断给定结点是否是根结点
+    {
+        return root;
+    }
+    //如果给定结点不 同在左子树，返回根结点
+    if(pInLeft == NULL && qInLeft != NULL)  
+    {
+        return root;
+    }
+    //如果给定结点不 同在右子树，返回根结点
+    if(pInLeft != NULL && qInLeft == NULL)   
+    {
+        return root;
+    }
+    if(pInLeft != NULL)   //给定结点同在左子树
+    {
+
+        return lowestCommonAncestor(root->left,p,q);
+    }
+    else    //给定结点同在右子树
+    {
+        return lowestCommonAncestor(root->right,p,q);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="5、若一棵二叉树，左右子树均有三个结点，其左子树的前序序列与中序序列相同，右子树的中序序列与后序序列相同，试构造该树。"><a href="#5、若一棵二叉树，左右子树均有三个结点，其左子树的前序序列与中序序列相同，右子树的中序序列与后序序列相同，试构造该树。" class="headerlink" title="5、若一棵二叉树，左右子树均有三个结点，其左子树的前序序列与中序序列相同，右子树的中序序列与后序序列相同，试构造该树。"></a>5、若一棵二叉树，左右子树均有三个结点，其左子树的前序序列与中序序列相同，右子树的中序序列与后序序列相同，试构造该树。</h2><blockquote>
 <p>由左子树的前序序列与中序序列相同得:</p>
 <ul>
@@ -1131,7 +1199,7 @@ s
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + 'From: 我很弱，但我要坚强！<br />'
+            + 'From: Cherrison<br />'
             + 'Author: Cherrison<br />'
             + 'Link: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';

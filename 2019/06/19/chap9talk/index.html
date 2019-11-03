@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>chap9talk | 我很弱，但我要坚强！</title>
+    <title>chap9talk | Cherrison</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -26,7 +26,8 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-hopscotch.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -38,7 +39,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">我很弱，但我要坚强！</span>
+                    <span class="logo-span">Cherrison</span>
                 </a>
             </div>
             
@@ -136,7 +137,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">我很弱，但我要坚强！</div>
+        <div class="logo-name">Cherrison</div>
         <div class="logo-desc">
             
             写写博客记录生活
@@ -446,14 +447,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1k
+                    478
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    4 Min
+                    1 Min
                 </div>
                 
 				
@@ -472,12 +473,107 @@
                 <h1 id="第九章-查找"><a href="#第九章-查找" class="headerlink" title="第九章 查找"></a>第九章 查找</h1><h2 id="1、证明二叉排序树结点的中序序列就是二叉排序树结点按关键字码值排序的序列。"><a href="#1、证明二叉排序树结点的中序序列就是二叉排序树结点按关键字码值排序的序列。" class="headerlink" title="1、证明二叉排序树结点的中序序列就是二叉排序树结点按关键字码值排序的序列。"></a>1、证明二叉排序树结点的中序序列就是二叉排序树结点按关键字码值排序的序列。</h2><pre><code>二叉树的中序遍历，其将每一层分成了三部分，(左子树所有节点) (根节点) (右子树所有节点)</code></pre><p>而对于一个二叉排序树, 它左子树上所有节点均小于根节点, 右子树上所有节点均大于根节点. 以此将二叉排序树<br>中的节点排序得到的序列也是(左子树所有节点) (根节点) (右子树所有节点) 所以二叉排序树结点的中序序列就是二<br>叉排序树结点按关键字码值排序的序列。</p>
 <h2 id="2、折半查找适不适合链表结构的序列，为什么？用二分查找的查找速度必然比线性查找的速度快，这种说法对吗？"><a href="#2、折半查找适不适合链表结构的序列，为什么？用二分查找的查找速度必然比线性查找的速度快，这种说法对吗？" class="headerlink" title="2、折半查找适不适合链表结构的序列，为什么？用二分查找的查找速度必然比线性查找的速度快，这种说法对吗？"></a>2、折半查找适不适合链表结构的序列，为什么？用二分查找的查找速度必然比线性查找的速度快，这种说法对吗？</h2><pre><code>不适合, 折半查找需要顺序结构, 而链表结构虽然是有序的, 但是查找时只能从头开始, 所以不能使用折半查找;</code></pre><p>这个说法不对, 例如: 一个序列 1 2 3 4 5 6 比如要查找 1 线性查找只需要一次比较, 而二分查找需要三次比较</p>
 <h2 id="3、判断正误：有-n-个数存放在一维数组-A〔1-n〕中，在进行顺序查找时，这-n个数的排列有序或无序其平均查找长度-ASL-相同。"><a href="#3、判断正误：有-n-个数存放在一维数组-A〔1-n〕中，在进行顺序查找时，这-n个数的排列有序或无序其平均查找长度-ASL-相同。" class="headerlink" title="3、判断正误：有 n 个数存放在一维数组 A〔1..n〕中，在进行顺序查找时，这 n个数的排列有序或无序其平均查找长度 ASL 相同。"></a>3、判断正误：有 n 个数存放在一维数组 A〔1..n〕中，在进行顺序查找时，这 n个数的排列有序或无序其平均查找长度 ASL 相同。</h2><pre><code>顺序查找不管其是否有序，都进行逐个遍历比较，直到相等为止所以平均情况下</code></pre><p>查找长度相同</p>
-<h2 id="4、试说明如何在-O-nlogn-时间内对含有-n-个数的数组中的逆序对进行计数。"><a href="#4、试说明如何在-O-nlogn-时间内对含有-n-个数的数组中的逆序对进行计数。" class="headerlink" title="4、试说明如何在 O(nlogn)时间内对含有 n 个数的数组中的逆序对进行计数。"></a>4、试说明如何在 O(nlogn)时间内对含有 n 个数的数组中的逆序对进行计数。</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">merge</span> <span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> begin, <span class="keyword">int</span> mid, <span class="keyword">int</span> end)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> result[end - begin + <span class="number">1</span>];  </span><br><span class="line">        <span class="keyword">int</span> i = begin;  </span><br><span class="line">        <span class="keyword">int</span> j = mid + <span class="number">1</span>;  </span><br><span class="line">        <span class="keyword">int</span> k = <span class="number">0</span>;  </span><br><span class="line">        <span class="keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= end) &#123;  </span><br><span class="line">            <span class="keyword">if</span> (A[i] &lt;= A[j]) &#123;  </span><br><span class="line">                    result[k ++] = A[i ++];  </span><br><span class="line">            &#125;  </span><br><span class="line">            <span class="keyword">else</span> &#123;  </span><br><span class="line">                count += mid - i + <span class="number">1</span>;  </span><br><span class="line">                result[k ++] = A[j ++];  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">            <span class="keyword">while</span> (j &lt;= end)  </span><br><span class="line">                result [k ++] = A[j ++];  </span><br><span class="line">            <span class="keyword">while</span> (i &lt;= mid)  </span><br><span class="line">                result[k ++] = A[i ++];    </span><br><span class="line">        <span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; end - begin + <span class="number">1</span>;k ++)  </span><br><span class="line">            A[begin + k] = result[k];  </span><br><span class="line">            <span class="keyword">return</span> count;</span><br><span class="line">    &#125;  </span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">* 归并排序中调用merge函数 </span></span><br><span class="line"><span class="comment">*/</span>  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>; </span><br><span class="line">    <span class="keyword">if</span> (begin &lt; end) &#123;  </span><br><span class="line">        <span class="keyword">int</span> mid = (begin + end)/<span class="number">2</span>;  </span><br><span class="line">        mergeSort (a, begin, mid);  </span><br><span class="line">        mergeSort (a, mid + <span class="number">1</span>, end);  </span><br><span class="line">        sum = merge (a, begin, mid, end);  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">int</span> a[n];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> m;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;m;</span><br><span class="line">        a[i] = m;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> begin = <span class="number">0</span>, end = n - <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;mergeSort(a, begin, end);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4、试说明如何在-O-nlogn-时间内对含有-n-个数的数组中的逆序对进行计数。"><a href="#4、试说明如何在-O-nlogn-时间内对含有-n-个数的数组中的逆序对进行计数。" class="headerlink" title="4、试说明如何在 O(nlogn)时间内对含有 n 个数的数组中的逆序对进行计数。"></a>4、试说明如何在 O(nlogn)时间内对含有 n 个数的数组中的逆序对进行计数。</h2><pre class="line-numbers language-CPP"><code class="language-CPP">    #include <iostream>
+    using namespace std;
 
+    int merge (int A[], int begin, int mid, int end) {  
+            static int count = 0;
+            int result[end - begin + 1];  
+            int i = begin;  
+            int j = mid + 1;  
+            int k = 0;  
+            while (i <= mid && j <= end) {  
+                if (A[i] <= A[j]) {  
+                        result[k ++] = A[i ++];  
+                }  
+                else {  
+                    count += mid - i + 1;  
+                    result[k ++] = A[j ++];  
+                }  
+            }  
+                while (j <= end)  
+                    result [k ++] = A[j ++];  
+                while (i <= mid)  
+                    result[k ++] = A[i ++];    
+            for (k = 0; k < end - begin + 1;k ++)  
+                A[begin + k] = result[k];  
+                return count;
+        }  
+    /* 
+    * 归并排序中调用merge函数 
+    */  
+    int mergeSort(int a[], int begin, int end) {  
+        int sum = 0; 
+        if (begin < end) {  
+            int mid = (begin + end)/2;  
+            mergeSort (a, begin, mid);  
+            mergeSort (a, mid + 1, end);  
+            sum = merge (a, begin, mid, end);  
+        }  
+        return sum;
+    }
+
+    int main(int argc, char** argv) {
+        int n;
+        cin>>n;
+        int a[n];
+        for(int i = 0; i < n; i++){
+            int m;
+            cin>>m;
+            a[i] = m;
+        }
+        int begin = 0, end = n - 1;
+        cout<<mergeSort(a, begin, end);
+        return 0;
+    }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="5、给定整型数组-B〔0-m-0-n〕，已知-B-中数据在每一维方向上都按从小到大的次序排列，且整型变量-x-在-B-中存在，试设计算法，找出一对满足-B〔i-j〕-x-的-i-j-值。要求比较次数不超过-m-n"><a href="#5、给定整型数组-B〔0-m-0-n〕，已知-B-中数据在每一维方向上都按从小到大的次序排列，且整型变量-x-在-B-中存在，试设计算法，找出一对满足-B〔i-j〕-x-的-i-j-值。要求比较次数不超过-m-n" class="headerlink" title="5、给定整型数组 B〔0..m,0..n〕，已知 B 中数据在每一维方向上都按从小到大的次序排列，且整型变量 x 在 B 中存在，试设计算法，找出一对满足 B〔i,j〕=x 的 i,j 值。要求比较次数不超过 m+n."></a>5、给定整型数组 B〔0..m,0..n〕，已知 B 中数据在每一维方向上都按从小到大的次序排列，且整型变量 x 在 B 中存在，试设计算法，找出一对满足 B〔i,j〕=x 的 i,j 值。要求比较次数不超过 m+n.</h2><p>   查找时先与每一维的最后一个元素比较, 如果小于等于就在这一维进行查找,<br>如果大于这个元素就到下一维重复这个过程. </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> m=<span class="number">10</span>,n=<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> B[<span class="number">11</span>][<span class="number">11</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> c=<span class="number">1</span>,r=n;	<span class="comment">// 从右上角开始找 </span></span><br><span class="line">    <span class="keyword">while</span>(B[c][r] != x) &#123;</span><br><span class="line">        <span class="keyword">if</span>(B[c][r] &gt; x)</span><br><span class="line">            r--;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            c++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"(%d, %d)\n"</span>,c,r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;	  </span><br><span class="line">    <span class="comment">// 生成矩阵B </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">        B[i][<span class="number">0</span>] = i; </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">            B[i][j] = B[i][j<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"矩阵B："</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++) &#123;</span><br><span class="line">            <span class="built_in">cout</span>.fill(<span class="string">'0'</span>);</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; setw(<span class="number">2</span>) &lt;&lt; B[i][j] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> Count=<span class="number">0</span>;  <span class="comment">//统计比较次数；</span></span><br><span class="line">    <span class="keyword">int</span> x;  <span class="comment">// 要查找的元素x；</span></span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;		<span class="comment">// 统计元素值为x的元素的个数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"输出要查找的值x  x∈(2,20),输入0结束:"</span>;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">        <span class="keyword">if</span>(!x)</span><br><span class="line">            <span class="keyword">break</span>; </span><br><span class="line">        Find(x);	</span><br><span class="line">    &#125;	                                                </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-CPP"><code class="language-CPP">    #include <iostream>
+    #include <iomanip>
+    #include <cstdio>
+    using namespace std;
+    int m=10,n=10;
+    int B[11][11];
+    void Find(int x)
+    {
+        int c=1,r=n;    // 从右上角开始找 
+        while(B[c][r] != x) {
+            if(B[c][r] > x)
+                r--;
+            else
+                c++;
+        }
+        printf("(%d, %d)\n",c,r);
+    }
+    int main()
+    {      
+        // 生成矩阵B 
+        for(int i=1;i<=m;i++)
+            B[i][0] = i; 
+        for(int i=1;i<=m;i++) {
+            for(int j=1;j<=n;j++)
+                B[i][j] = B[i][j-1]+1;
+        }
+        cout << "矩阵B：" << endl; 
+        for(int i=1;i<=n;i++) {
+            for(int j=1;j<=n;j++) {
+                cout.fill('0');
+                cout << setw(2) << B[i][j] << " ";
+            }
+            cout << endl;
+        }
 
+        int Count=0;  //统计比较次数；
+        int x;  // 要查找的元素x；
+        int sum=0;        // 统计元素值为x的元素的个数
 
+        while(1) {
+            cout << "输出要查找的值x  x∈(2,20),输入0结束:";
+            cin >> x;
+            if(!x)
+                break; 
+            Find(x);    
+        }                                                    
+    }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -987,7 +1083,9 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数据结构与算法复习1.快速排序快速排序的一个实现123456789101112131415161718void QuickSort(Sqlist &amp;L, int lowf, int highf)&#123;    low = low
+                            数据结构与算法复习1.快速排序快速排序的一个实现void QuickSort(Sqlist &L, int lowf, int highf){
+    low = lowf; high = highf;
+    if(low >= high
                         
                     </div>
                     <div class="publish-info">
@@ -1032,7 +1130,8 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本章作业：9.31，9.33，9.35，9.389.31 试编写一个判别给定二叉树是否为二叉排序树的算法, 设此二叉树以二叉链表作为存储结构,且树中节点的关键字均不同.123456789101112131415161718192021222
+                            本章作业：9.31，9.33，9.35，9.389.31 试编写一个判别给定二叉树是否为二叉排序树的算法, 设此二叉树以二叉链表作为存储结构,且树中节点的关键字均不同.int IsSearchTree(const BTNode *t){
+ 
                         
                     </div>
                     <div class="publish-info">
@@ -1092,7 +1191,7 @@
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + 'From: 我很弱，但我要坚强！<br />'
+            + 'From: Cherrison<br />'
             + 'Author: Cherrison<br />'
             + 'Link: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';

@@ -5,7 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="DsReview1, Android Linux CCF-CSP js html css nodejs java c/c++ python php 数据结构与算法">
-    <meta name="description" content="数据结构与算法复习1.快速排序快速排序的一个实现123456789101112131415161718void QuickSort(Sqlist &amp;amp;L, int lowf, int highf)&amp;#123;    low = low">
+    <meta name="description" content="数据结构与算法复习1.快速排序快速排序的一个实现void QuickSort(Sqlist &amp;L, int lowf, int highf){
+    low = lowf; high = highf;
+    if(low &gt;= high">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>DsReview1 | 我很弱，但我要坚强！</title>
+    <title>DsReview1 | Cherrison</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -26,7 +28,8 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-hopscotch.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -38,7 +41,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">我很弱，但我要坚强！</span>
+                    <span class="logo-span">Cherrison</span>
                 </a>
             </div>
             
@@ -136,7 +139,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">我很弱，但我要坚强！</div>
+        <div class="logo-name">Cherrison</div>
         <div class="logo-desc">
             
             写写博客记录生活
@@ -446,14 +449,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    936
+                    274
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    4 Min
+                    1 Min
                 </div>
                 
 				
@@ -469,8 +472,24 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="数据结构与算法复习"><a href="#数据结构与算法复习" class="headerlink" title="数据结构与算法复习"></a>数据结构与算法复习</h1><h2 id="1-快速排序"><a href="#1-快速排序" class="headerlink" title="1.快速排序"></a>1.快速排序</h2><h3 id="快速排序的一个实现"><a href="#快速排序的一个实现" class="headerlink" title="快速排序的一个实现"></a>快速排序的一个实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickSort</span><span class="params">(Sqlist &amp;L, <span class="keyword">int</span> lowf, <span class="keyword">int</span> highf)</span></span>&#123;</span><br><span class="line">    low = lowf; high = highf;</span><br><span class="line">    <span class="keyword">if</span>(low &gt;= hight) <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">// 书上 L.elem[low].key 这里就当元素只有值没有附加信息</span></span><br><span class="line">    temp = L.elem[low]; <span class="comment">// 记录枢纽的值</span></span><br><span class="line">    <span class="keyword">while</span>(low &lt; high)&#123;</span><br><span class="line">        <span class="comment">// 先从右向左查找</span></span><br><span class="line">        <span class="keyword">while</span>( low &lt; high &amp;&amp; L.elem[high] &gt; temp) high--;</span><br><span class="line">        L.elem[low] = L.elem[high]  <span class="comment">// 将比枢纽小的移动到低端</span></span><br><span class="line">        <span class="comment">// 在从左向右查找</span></span><br><span class="line">        <span class="keyword">while</span>( low &lt; high &amp;&amp; L.elem[high] &lt;= temp) low++;</span><br><span class="line">        L.elem[high] = L.elem[low]  <span class="comment">// 将比枢纽大的移动到高端</span></span><br><span class="line">    &#125;</span><br><span class="line">    L.elem[low] = temp;</span><br><span class="line"></span><br><span class="line">    QuickSort(L, lowf, highf<span class="number">-1</span>);</span><br><span class="line">    QuickSort(L, lowf+<span class="number">1</span>, highf)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <h1 id="数据结构与算法复习"><a href="#数据结构与算法复习" class="headerlink" title="数据结构与算法复习"></a>数据结构与算法复习</h1><h2 id="1-快速排序"><a href="#1-快速排序" class="headerlink" title="1.快速排序"></a>1.快速排序</h2><h3 id="快速排序的一个实现"><a href="#快速排序的一个实现" class="headerlink" title="快速排序的一个实现"></a>快速排序的一个实现</h3><pre class="line-numbers language-CPP"><code class="language-CPP">void QuickSort(Sqlist &L, int lowf, int highf){
+    low = lowf; high = highf;
+    if(low >= hight) return;
+    // 书上 L.elem[low].key 这里就当元素只有值没有附加信息
+    temp = L.elem[low]; // 记录枢纽的值
+    while(low < high){
+        // 先从右向左查找
+        while( low < high && L.elem[high] > temp) high--;
+        L.elem[low] = L.elem[high]  // 将比枢纽小的移动到低端
+        // 在从左向右查找
+        while( low < high && L.elem[high] <= temp) low++;
+        L.elem[high] = L.elem[low]  // 将比枢纽大的移动到高端
+    }
+    L.elem[low] = temp;
 
+    QuickSort(L, lowf, highf-1);
+    QuickSort(L, lowf+1, highf)
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Top-K问题-找出最大的前K个值"><a href="#Top-K问题-找出最大的前K个值" class="headerlink" title="Top K问题 找出最大的前K个值."></a>Top K问题 找出最大的前K个值.</h3><p><strong><code>Quick Select找出第k大元素</code></strong></p>
 <p>** 解决思路 **</p>
 <p>选取一个基准元素pivot，将数组切分为两个子数组，比pivot大的扔左子数组，比pivot小的扔右子数组，然后递推地切分子数组。QuickSelect不同于Quick Sort的是其没有对每个子数组做切分，而是对目标子数组做切分。</p>
@@ -480,31 +499,81 @@
 <li>若上述两个条件均不满足，则第k大元素必出现在右子数组中。</li>
 </ul>
 <p>** 改进QuickSort **</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// L.elem 从0开始存数据</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">QuickSelect</span><span class="params">(Sqlist &amp;L, <span class="keyword">int</span> k, <span class="keyword">int</span> lowf, <span class="keyword">int</span> highf)</span></span>&#123;</span><br><span class="line">    low = lowf; high = highf;</span><br><span class="line">    <span class="keyword">if</span>(low = hight) <span class="keyword">return</span> L.elem[low];</span><br><span class="line">    <span class="comment">// 书上 L.elem[low].key 这里就当元素只有值没有附加信息</span></span><br><span class="line">    temp = L.elem[low]; <span class="comment">// 记录枢纽的值</span></span><br><span class="line">    <span class="keyword">while</span>(low &lt; high)&#123;</span><br><span class="line">        <span class="comment">// 先从右向左查找</span></span><br><span class="line">        <span class="keyword">while</span>( low &lt; high &amp;&amp; L.elem[high] &gt; temp) high--;</span><br><span class="line">        L.elem[low] = L.elem[high]; <span class="comment">// 将比枢纽小的移动到低端</span></span><br><span class="line">        <span class="comment">// 在从左向右查找</span></span><br><span class="line">        <span class="keyword">while</span>( low &lt; high &amp;&amp; L.elem[high] &lt;= temp) low++;</span><br><span class="line">        L.elem[high] = L.elem[low]; <span class="comment">// 将比枢纽大的移动到高端</span></span><br><span class="line">    &#125;</span><br><span class="line">    L.elem[low] = temp;</span><br><span class="line">    <span class="keyword">if</span>( k==low+<span class="number">1</span>) <span class="keyword">return</span> temp;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(k &gt; low+<span class="number">1</span>)  <span class="keyword">return</span> QuickSelect(L, k, lowf+<span class="number">1</span>, highf);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(k &lt; low+<span class="number">1</span>)  <span class="keyword">return</span> QuickSelect(L, k, lowf, highf<span class="number">-1</span>);</span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-CPP"><code class="language-CPP">// L.elem 从0开始存数据
+int QuickSelect(Sqlist &L, int k, int lowf, int highf){
+    low = lowf; high = highf;
+    if(low = hight) return L.elem[low];
+    // 书上 L.elem[low].key 这里就当元素只有值没有附加信息
+    temp = L.elem[low]; // 记录枢纽的值
+    while(low < high){
+        // 先从右向左查找
+        while( low < high && L.elem[high] > temp) high--;
+        L.elem[low] = L.elem[high]; // 将比枢纽小的移动到低端
+        // 在从左向右查找
+        while( low < high && L.elem[high] <= temp) low++;
+        L.elem[high] = L.elem[low]; // 将比枢纽大的移动到高端
+    }
+    L.elem[low] = temp;
+    if( k==low+1) return temp;
+    else if(k > low+1)  return QuickSelect(L, k, lowf+1, highf);
+    else if(k < low+1)  return QuickSelect(L, k, lowf, highf-1);
 
-<h2 id="2-左右子树交换的递归实现"><a href="#2-左右子树交换的递归实现" class="headerlink" title="2. 左右子树交换的递归实现"></a>2. 左右子树交换的递归实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BTSwap</span><span class="params">(BiTree T)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">if</span>(T)  </span><br><span class="line">    &#123;   <span class="comment">// 交换左右子树</span></span><br><span class="line">        BiTree p=T-&gt;lchild;</span><br><span class="line">        T-&gt;lchild=T-&gt;rchild;</span><br><span class="line">        T-&gt;rchild=p;</span><br><span class="line">        <span class="comment">// 递归交换左孩子和右孩子的左右子树</span></span><br><span class="line">        BTSwap(T-&gt;lchild); </span><br><span class="line">        BTSwap(T-&gt;rchild);</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-左右子树交换的递归实现"><a href="#2-左右子树交换的递归实现" class="headerlink" title="2. 左右子树交换的递归实现"></a>2. 左右子树交换的递归实现</h2><pre class="line-numbers language-CPP"><code class="language-CPP">void BTSwap(BiTree T)  
+{  
+    if(T)  
+    {   // 交换左右子树
+        BiTree p=T->lchild;
+        T->lchild=T->rchild;
+        T->rchild=p;
+        // 递归交换左孩子和右孩子的左右子树
+        BTSwap(T->lchild); 
+        BTSwap(T->rchild);
+    }  
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-Dijkstra-算法"><a href="#3-Dijkstra-算法" class="headerlink" title="3. Dijkstra 算法"></a>3. Dijkstra 算法</h2><p><code>原理图</code> </p>
 <p><img src="https://s2.ax1x.com/2019/06/20/Vvtza4.png" alt=""></p>
 <p><img src="https://s2.ax1x.com/2019/06/20/VvNixx.png" alt=""></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Inf 99999; <span class="comment">// 我们认为的一个最大的数</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 邻接矩阵 起点 最短路 `(无最短的路径 只求出最短路的长度)`</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dijkstra</span><span class="params">(MGraph G, <span class="keyword">int</span> v0, ShortPath &amp;D)</span></span>&#123;</span><br><span class="line">    D[v0] = <span class="number">0</span>; book[v0] = <span class="literal">true</span>; <span class="comment">// 把v0加入到S集合中</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i &lt; G.vexnum; i++)  <span class="comment">// 其余的顶点</span></span><br><span class="line">        min = Inf;</span><br><span class="line">        <span class="keyword">for</span>(w=<span class="number">0</span>;w &lt; G.vexnum; w++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!book[w])&#123;</span><br><span class="line">                 <span class="keyword">if</span>(D[w] &lt; min )&#123; <span class="comment">// 找出V集合中距离v0最近的点 </span></span><br><span class="line">                    v = w; </span><br><span class="line">                    min = D[w];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            book[v] = <span class="literal">true</span>; <span class="comment">// 将选出的点加入到S集合中</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(w=<span class="number">0</span>; w&lt;G.vexnum; w++)&#123; <span class="comment">// 更新最短路径</span></span><br><span class="line">            <span class="keyword">if</span>(!book[w]&amp;&amp;min+G.arcs[v][w] &lt; D[w]) <span class="comment">// 如果始点到当前选出的点的距离 + 选出的点到其余各点的距离 </span></span><br><span class="line">                 D[w] = min+G.arcs[v][w]          <span class="comment">// 小于 S集合中 源点到其余各点的距离 那么更新源点到其余各点的距离</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-CPP"><code class="language-CPP">
+#define Inf 99999; // 我们认为的一个最大的数
 
+// 邻接矩阵 起点 最短路 `(无最短的路径 只求出最短路的长度)`
+void Dijkstra(MGraph G, int v0, ShortPath &D){
+    D[v0] = 0; book[v0] = true; // 把v0加入到S集合中
+    for(int i=1; i < G.vexnum; i++)  // 其余的顶点
+        min = Inf;
+        for(w=0;w < G.vexnum; w++){
+            if(!book[w]){
+                 if(D[w] < min ){ // 找出V集合中距离v0最近的点 
+                    v = w; 
+                    min = D[w];
+                }
+            }
+            book[v] = true; // 将选出的点加入到S集合中
+        }
+        for(w=0; w<G.vexnum; w++){ // 更新最短路径
+            if(!book[w]&&min+G.arcs[v][w] < D[w]) // 如果始点到当前选出的点的距离 + 选出的点到其余各点的距离 
+                 D[w] = min+G.arcs[v][w]          // 小于 S集合中 源点到其余各点的距离 那么更新源点到其余各点的距离
+        }
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="4-归并排序"><a href="#4-归并排序" class="headerlink" title="4. 归并排序"></a>4. 归并排序</h2><p> <code>原理图</code> </p>
 <p><img src="https://s2.ax1x.com/2019/06/20/Vvt6PA.png" alt=""></p>
-<pre><code class="CPP"><span class="function"><span class="keyword">void</span> <span class="title">MSort</span><span class="params">(RcdType SR[], RcdType &amp;TR1[], <span class="keyword">int</span> s, <span class="keyword">int</span> t)</span></span>{
-<span class="comment">// 将SR归并排序为TR1</span>
-    <span class="keyword">if</span>(s==t) TR1[s] = SR[s];
-    <span class="keyword">else</span> {
-        m = (s + t) / <span class="number">2</span>; <span class="comment">// 将SR分为两部分</span>
-        MSort(SR, TR2, s, m);  <span class="comment">// 递归将分为的两部分有序</span>
-        MSort(SR, TR2, m+<span class="number">1</span>, t);
-        Merge(TR2, TR1, s, m, t); <span class="comment">// 将相邻序列合并 这个与第二章顺序表的合并类似</span>
+<pre class="line-numbers language-CPP"><code class="language-CPP">    void MSort(RcdType SR[], RcdType &TR1[], int s, int t){
+    // 将SR归并排序为TR1
+        if(s==t) TR1[s] = SR[s];
+        else {
+            m = (s + t) / 2; // 将SR分为两部分
+            MSort(SR, TR2, s, m);  // 递归将分为的两部分有序
+            MSort(SR, TR2, m+1, t);
+            Merge(TR2, TR1, s, m, t); // 将相邻序列合并 这个与第二章顺序表的合并类似
+        }
     }
-}
-<span class="comment">// 归并排序</span>
-<span class="function"><span class="keyword">void</span> <span class="title">MergeSort</span><span class="params">(SqList &amp;L)</span></span>{
-    MSort(L.elem, L.elem, <span class="number">1</span>, L.Length);
-}
-</code></pre>
+    // 归并排序
+    void MergeSort(SqList &L){
+        MSort(L.elem, L.elem, 1, L.Length);
+    }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -1119,7 +1188,7 @@
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + 'From: 我很弱，但我要坚强！<br />'
+            + 'From: Cherrison<br />'
             + 'Author: Cherrison<br />'
             + 'Link: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
