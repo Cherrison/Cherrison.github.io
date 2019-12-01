@@ -456,14 +456,14 @@ DFS，全排列">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    222
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    6 Min
                 </div>
                 
 				
@@ -498,7 +498,334 @@ DFS，全排列">
 <blockquote>
 <p>可任意指定开始点位置<br>可任意指定生成的地图大小和房间数量<br>生成结果不重复<br>同一形状地图， 同一开始点 ， 生成顺序不同，而且一定可以连通</p>
 </blockquote>
-<h2 id="二-展示一下"><a href="#二-展示一下" class="headerlink" title="二. 展示一下"></a>二. 展示一下</h2><h3 id="1-有那些场景"><a href="#1-有那些场景" class="headerlink" title="1. 有那些场景"></a>1. 有那些场景</h3><h3 id="2-有什么功能"><a href="#2-有什么功能" class="headerlink" title="2. 有什么功能"></a>2. 有什么功能</h3><h2 id="三-遇到了那些问题-如何解决遇到的问题"><a href="#三-遇到了那些问题-如何解决遇到的问题" class="headerlink" title="三. 遇到了那些问题?如何解决遇到的问题?"></a>三. 遇到了那些问题?如何解决遇到的问题?</h2><h3 id="1-难点分析"><a href="#1-难点分析" class="headerlink" title="1.   难点分析"></a>1.   难点分析</h3><h3 id="2-解决思路"><a href="#2-解决思路" class="headerlink" title="2.   解决思路"></a>2.   解决思路</h3><h2 id="四-经验与体会"><a href="#四-经验与体会" class="headerlink" title="四. 经验与体会"></a>四. 经验与体会</h2><h3 id="1-简单的东西自己做起来并不简单"><a href="#1-简单的东西自己做起来并不简单" class="headerlink" title="1. 简单的东西自己做起来并不简单"></a>1. 简单的东西自己做起来并不简单</h3><h3 id="2-将所学实际应用"><a href="#2-将所学实际应用" class="headerlink" title="2. 将所学实际应用"></a>2. 将所学实际应用</h3>
+<h2 id="二-展示一下"><a href="#二-展示一下" class="headerlink" title="二. 展示一下"></a>二. 展示一下</h2><h3 id="1-有那些场景"><a href="#1-有那些场景" class="headerlink" title="1. 有那些场景"></a>1. 有那些场景</h3><h3 id="2-有什么功能"><a href="#2-有什么功能" class="headerlink" title="2. 有什么功能"></a>2. 有什么功能</h3><h2 id="三-遇到了那些问题-如何解决遇到的问题"><a href="#三-遇到了那些问题-如何解决遇到的问题" class="headerlink" title="三. 遇到了那些问题?如何解决遇到的问题?"></a>三. 遇到了那些问题?如何解决遇到的问题?</h2><h3 id="1-难点分析"><a href="#1-难点分析" class="headerlink" title="1.   难点分析"></a>1.   难点分析</h3><h3 id="2-解决思路"><a href="#2-解决思路" class="headerlink" title="2.   解决思路"></a>2.   解决思路</h3><h2 id="四-经验与体会"><a href="#四-经验与体会" class="headerlink" title="四. 经验与体会"></a>四. 经验与体会</h2><h3 id="1-简单的东西自己做起来并不简单"><a href="#1-简单的东西自己做起来并不简单" class="headerlink" title="1. 简单的东西自己做起来并不简单"></a>1. 简单的东西自己做起来并不简单</h3><h3 id="2-将所学实际应用"><a href="#2-将所学实际应用" class="headerlink" title="2. 将所学实际应用"></a>2. 将所学实际应用</h3><h2 id="一些实现"><a href="#一些实现" class="headerlink" title="一些实现"></a>一些实现</h2><h3 id="异步加载"><a href="#异步加载" class="headerlink" title="异步加载"></a>异步加载</h3><pre class="line-numbers language-C#"><code class="language-C#">
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class StartGame : MonoBehaviour {
+    static string nextScene;
+    AsyncOperation async;
+    public float temp;
+    public Slider slider;
+    public Text text;
+    // Use this for initialization
+    void Start () {
+        temp = 0;
+        if (SceneManager.GetActiveScene().name == "Loading")
+        {
+            async = SceneManager.LoadSceneAsync(nextScene);
+            async.allowSceneActivation = false;
+        }
+    }
+
+    // 异步场景加载 伪后台加载
+    public void LoadingLevel(string nextSceneName)
+    {
+        nextScene = nextSceneName;
+        SceneManager.LoadScene("Loading");
+    }
+
+    // Update is called once per frame
+    void Update () {
+
+        if(text && slider)
+        {
+            temp = Mathf.Lerp(temp, async.progress, Time.deltaTime*2);
+            text.text = ((int) (temp / 9*10 * 100)).ToString() + "%";
+            slider.value = temp / 9*10;
+            if( temp/9*10 >= 0.99)
+            {
+                temp = 1;
+                async.allowSceneActivation = true;
+                text.text = 100.ToString() + "%";
+            }
+        }
+
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="敌人控制"><a href="#敌人控制" class="headerlink" title="敌人控制"></a>敌人控制</h3><pre class="line-numbers language-C#"><code class="language-C#">
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+
+/*  Unity 中的生命周期函数
+ *  Awake()：唤醒事件，游戏一开始运行就执行，只执行一次。
+
+    OnEnable()：启用事件，只执行一次。当脚本组件被启用的时候执行一次。
+
+    Start()：开始事件，执行一次。
+
+    FixedUpdate()：固定更新事件，执行N次，0.02秒执行一次。所有物理组件相关的更新都在这个事件中处理。
+
+    Update()：更新事件，执行N次，每帧执行一次。
+
+    LateUpdate()：稍后更新事件，执行N次，在 Update() 事件执行完毕后再执行。
+
+    OnGUI()：GUI渲染事件，执行N次，执行的次数是 Update() 事件的两倍。
+
+    OnDisable()：禁用事件，执行一次。在 OnDestroy() 事件前执行。或者当该脚本组件被“禁用”后，也会触发该事件。
+
+    OnDestroy()：销毁事件，执行一次。当脚本所挂载的游戏物体被销毁时执行。
+
+*/
+public class EnermyStart : MonoBehaviour {
+    public GameObject enemyPrefab;
+    private float createTime;
+    private int currentnum = 0;
+
+    // [Header("僵尸产生点")]
+    // 僵尸产生的位置 同一个位置有四个产生点 同时产生四个僵尸
+    private Vector3[] positonV3 = new Vector3[4];
+    // 僵尸的产生个数
+    public int createtotal = 30;
+
+    [Header("连杀判定")]
+    public float killTime;  // 时间
+    private float killTimeClip;
+    private int killSoundId = 0;
+
+    [Header("击杀音效")]
+    public AudioClip[] killSounds;
+    public AudioSource audioSource;
+
+    [Header("下一关音效")]
+    public AudioClip nextClip;
+
+    // Use this for initialization
+    public int getCreateTotal(){
+        return createtotal;
+    }
+    public void setCreateTotal(int num)
+    {
+        createtotal = num;
+    }
+    /*
+     * parmas: 
+     * 待写
+     */
+    void Start () {
+        initGame();
+        // Random.seed()
+    }
+
+    // 进入下一关
+    public void nextStage(int num)
+    {
+        createtotal += num;
+        currentnum = createtotal;
+        createTime = 0;
+        GameObject.Find("info").GetComponent<Text>().text = "剩余杀敌数: " + createtotal.ToString();
+        // audioSource.clip = nextClip;
+        // audioSource.Play();
+    }
+
+    // 初始化游戏
+    public void initGame()
+    {
+        createTime = 0;
+        currentnum = createtotal;
+        killTimeClip = 0f;
+        GameObject.Find("info").GetComponent<Text>().text = "剩余杀敌数: " + createtotal.ToString();
+        positonV3[0] = new Vector3(326.82f, 0.06000042f, 274.96f);
+        positonV3[1] = new Vector3(324.36f, 0.06000042f, 274.96f);
+        positonV3[2] = new Vector3(326.82f, 0.06000042f, 272.519f);
+        positonV3[3] = new Vector3(324.36f, 0.06000042f, 272.519f);
+        audioSource.Play();
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        killTimeClip -= Time.deltaTime;
+        if (killTimeClip <= 0)
+        {
+            GameObject.Find("killJudge").GetComponent<Text>().text = "0 连杀";
+        }
+        if (createtotal == 0){
+            GameObject.Find("info").GetComponent<Text>().text = "恭喜通关啦!";
+           // Destroy(gameObject);
+        }
+        else{
+            if(currentnum > 0)
+            {
+                createTime -= Time.deltaTime;
+                if (createTime <= 0)
+                {
+                    for(int i=0; i < positonV3.Length; i++)
+                    {
+                        if (currentnum == 0) break;
+                        Instantiate(enemyPrefab, positonV3[i], enemyPrefab.transform.rotation);
+                        currentnum --;
+                    }
+                    createTime = Random.Range(4, 10);
+                }
+            }
+        }
+    }
+    void onDestroy()
+    {
+
+    }
+
+    void OnDrawGizmos() {
+        Gizmos.DrawIcon (transform.position, "item");
+    }
+
+    // 连杀判定
+    public void killJudge()
+    {
+        if (killTimeClip > 0)
+        {
+            Debug.Log("Judge IN");
+            killSoundId++;
+            if (killSoundId >= killSounds.Length) killSoundId--;
+        }
+        else
+        {
+            audioSource.clip = killSounds[0];
+            killSoundId = 0;
+        }
+        killTimeClip = killTime;
+        audioSource.clip = killSounds[killSoundId];
+        audioSource.Play();
+        GameObject.Find("killJudge").GetComponent<Text>().text = (killSoundId + 1).ToString() + "连杀";
+        Debug.Log("Judge Play");
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="地图算法"><a href="#地图算法" class="headerlink" title="地图算法"></a>地图算法</h3><pre class="line-numbers language-C#"><code class="language-C#">
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Rooms
+{
+    class RoomGen
+    {
+        // 构造函数 传入需要生成的房间数量
+        public RoomGen(int roomNum)
+        {
+            this.roomNum = roomNum;
+        }
+        const int sizex = 5, sizey = 5;
+        int pnum = 0;
+        // 生成的房间信息
+        int[,] Groom = new int[sizex, sizey]{
+                {0,0,0,0,0},
+                {0,0,0,0,0},
+                {0,0,0,0,0},
+                {0,0,0,0,0},
+                {0,0,0,0,0}
+            };
+        int[,] permu = new int[24,4];
+        int[] perArr = new int[4] {0, 1, 2, 3};  //  方向参数的索引
+        int currentRooms = 0; // 标识当前生成的房间个数
+        int roomNum;  //  需要生成的房间总数
+        // 定义四个方向 用于移动 上 右 下 左
+        int[] dirx = new int[4] { -1, 0, 1, 0 };
+        int[] diry = new int[4] { 0, 1, 0, -1 };
+        // 全排列函数
+        void Permu(int n)
+        {
+            if(n == 4)
+            {
+                for(int i = 0; i < 4; i++)
+                {
+                    permu[pnum, i] = perArr[i];
+                }
+                pnum++;
+            }
+            else
+            {
+                for (int i = n; i < 4; i++)
+                {
+                    swap(n, i);
+                    Permu(n + 1);
+                    swap(n, i);
+                }
+            }
+        }
+        void swap(int a, int b)
+        {
+            int num;
+            num = perArr[b];
+            perArr[b] = perArr[a];
+            perArr[a] = num;
+        }
+        // 输入起点 生成的房间的个数
+        bool DFS(int x, int y)
+        {
+            Random random = new Random(unchecked((int)DateTime.Now.Ticks));
+            int xi = random.Next(0, 24);
+            for (int i=0; i< 4;i++)
+            {
+                int tempx = x + dirx[permu[xi, i]];
+                int tempy = y + diry[permu[xi, i]];
+                // 边界检查
+                if (tempx < 0 || tempy < 0 || tempx >= sizex || tempy >= sizey)
+                { 
+                }
+                else if (Groom[tempx, tempy] == 1)
+                {
+                }
+                else
+                {
+                    if (roomNum == currentRooms)
+                    {  //  满足生成个数成功返回
+                        return true;
+                    }
+                    else
+                    {
+                        Groom[tempx, tempy] = 1;
+                        currentRooms++;
+                        DFS(tempx, tempy);
+                    }
+                }
+            }
+            return true;
+        }
+        void display()
+        {
+            int i, j;
+            for (i = 0; i < sizex; i++)
+            {
+                for (j = 0; j < sizey; j++)
+                {
+                    // rooms[i, j] = 0;
+                    if (Groom[i, j] == 1)
+                        Console.Write("* ");
+                    else
+                        Console.Write(". ");
+                }
+                Console.WriteLine("");
+            }
+        }
+        static void Main(string[] args)
+        {
+            Random random = new Random(unchecked((int)DateTime.Now.Ticks));
+            for(int i=0; i< 10; i++)
+            {
+                int xi = random.Next(0, 4), yi = random.Next(0, 4);
+                int roomnum = 3 + i * 2 + 1;
+                Console.WriteLine("第"+(i+1)+"关 房间数: "+ roomnum);
+                RoomGen roomGen = new RoomGen(roomnum);
+                roomGen.Permu(0);
+                roomGen.DFS(xi, yi);
+                roomGen.display();
+                Console.WriteLine("开始点坐标: " + "(" + xi + "," + yi + ")");
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr/>
 
