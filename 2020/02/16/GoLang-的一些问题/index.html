@@ -4,8 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Prim算法, Android Linux CCF-CSP js html css nodejs java c/c++ python php 数据结构与算法">
-    <meta name="description" content="Prim算法Prim算法是一种产生最小生成树的算法。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克（英语：Vojtěch Jarník）发现；并在1957年由美国计算机科学家罗伯特·普里姆（英语：Robert C. Prim）独立发现；1">
+    <meta name="keywords" content="GoLang_的一些问题, Android Linux CCF-CSP js html css nodejs java c/c++ python php 数据结构与算法">
+    <meta name="description" content="
+1.9/1.10中，time.Now()返回的是什么时间？这样做的决定因素是什么?
+
+是想考 monotonic time 和 wall time 吗？也可能是想考 vdso 的 syscall
+
+golang 的 sync.atomic">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Prim算法 | Cherrison</title>
+    <title>GoLang_的一些问题 | Cherrison</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,13 +309,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Prim算法
+                        GoLang_的一些问题
                     </div>
                 </div>
             </div>
@@ -422,8 +427,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">
-                                <span class="chip bg-color">数据结构与算法 最小生成树</span>
+                            <a href="/tags/Golang/">
+                                <span class="chip bg-color">Golang</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%97%AE%E9%A2%98%E4%B8%8E%E5%9B%9E%E7%AD%94/">
+                                <span class="chip bg-color">问题与回答</span>
                             </a>
                         
                     </div>
@@ -434,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" class="post-category">
-                                数据结构与算法基础
+                            <a href="/categories/GoLearn/" class="post-category">
+                                GoLearn
                             </a>
                         
                     </div>
@@ -447,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-05-23
+                    2020-02-16
                 </div>
                 
 
@@ -456,14 +465,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    272
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    7 Min
                 </div>
                 
 				
@@ -479,11 +488,78 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Prim算法"><a href="#Prim算法" class="headerlink" title="Prim算法"></a>Prim算法</h1><p><code>Prim</code>算法是一种产生最小生成树的算法。该算法于<code>1930</code>年由捷克数学家沃伊捷赫·亚尔尼克（英语：<code>Vojtěch Jarník</code>）发现；并在1957年由美国计算机科学家罗伯特·普里姆（英语：<code>Robert C. Prim</code>）独立发现；<code>1959</code>年，艾兹格·迪科斯彻再次发现了该算法。</p>
-<p><code>Prim</code>算法从任意一个顶点开始，每次选择一个与当前顶点集最近的一个顶点，并将两顶点之间的边加入到树中。<code>Prim</code>算法在找当前最近顶点时使用到了贪婪算法。</p>
-<h2 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a><strong>算法流程：</strong></h2><blockquote>
-<p>1.在一个加权连通图中，顶点集合V，边集合为E</br><br>2.任意选出一个点作为初始顶点,标记为visit,计算所有与之相连接的点的距离，选择距离最短的，标记visit.</br><br>3.重复以下操作，直到所有点都被标记为visit：在剩下的点钟，计算与已标记visit点距离最小的点，标记visit,证明加入了最小生成树。</p>
-</blockquote>
+                <ul>
+<li><h3 id="1-9-1-10中，time-Now-返回的是什么时间？这样做的决定因素是什么"><a href="#1-9-1-10中，time-Now-返回的是什么时间？这样做的决定因素是什么" class="headerlink" title="1.9/1.10中，time.Now()返回的是什么时间？这样做的决定因素是什么?"></a>1.9/1.10中，time.Now()返回的是什么时间？这样做的决定因素是什么?</h3></li>
+</ul>
+<p>是想考 monotonic time 和 wall time 吗？<br>也可能是想考 vdso 的 syscall</p>
+<ul>
+<li><h3 id="golang-的-sync-atomic-和-C-11-的-atomic-最显著的在-golang-doc-里提到的差别在哪里，如何解决或者说规避？"><a href="#golang-的-sync-atomic-和-C-11-的-atomic-最显著的在-golang-doc-里提到的差别在哪里，如何解决或者说规避？" class="headerlink" title="golang 的 sync.atomic 和 C++11 的 atomic 最显著的在 golang doc 里提到的差别在哪里，如何解决或者说规避？"></a>golang 的 sync.atomic 和 C++11 的 atomic 最显著的在 golang doc 里提到的差别在哪里，如何解决或者说规避？</h3></li>
+</ul>
+<p>memory order，golang doc 里并没有和 c艹对比? issue 里有提到 Go 的 memory order 等同于 seq_cst 反而好写 lockfree 程序，因为在 seq_cst 的内存模型下，原子操作的 load 和 store 之间可以保证线性的执行关系。只不过性能差一些，不知道作者说的需要解决的问题是啥问题？<br>相关 issue 在这里：<a href="https://github.com/golang/go/issues/5045" target="_blank" rel="noopener">这里</a></p>
+<ul>
+<li><h3 id="到-1-11-为止，sync-RWMutex-最主要的性能问题最容易在什么常见场景下暴露。有哪些解决或者规避方法？"><a href="#到-1-11-为止，sync-RWMutex-最主要的性能问题最容易在什么常见场景下暴露。有哪些解决或者规避方法？" class="headerlink" title="到 1.11 为止，sync.RWMutex 最主要的性能问题最容易在什么常见场景下暴露。有哪些解决或者规避方法？"></a>到 1.11 为止，sync.RWMutex 最主要的性能问题最容易在什么常见场景下暴露。有哪些解决或者规避方法？</h3></li>
+</ul>
+<p>是想考 lock contention 和 read lock 的 cache contention?<br>对锁进行优化一般思路是进行锁的粒度拆分。<br>runtime 里的优化手段一般是按照 p 来进行拆分，比如 timer bucket 的拆分。内存分配时每个 p 上都有各种乱七八糟的 cache，本地获取基本可以无锁，获取不到的时候，才会进全局抢锁，思路都差不多。<br>用户态无法获得 <code>p.id</code>，但可以进行简单的锁粒度拆分，类似 github 上开源的 concurrentmap，或者 sync.Map 的实现。一些场景可以尝试用 atomic.CAS 替代读写锁。</p>
+<ul>
+<li><h3 id="如何做一个逻辑正确但-golang-调度器-1-10-无法正确应对，进而导致无法产生预期结果的程序。调度器如何改进可以解决此问题？"><a href="#如何做一个逻辑正确但-golang-调度器-1-10-无法正确应对，进而导致无法产生预期结果的程序。调度器如何改进可以解决此问题？" class="headerlink" title="如何做一个逻辑正确但 golang 调度器(1.10)无法正确应对，进而导致无法产生预期结果的程序。调度器如何改进可以解决此问题？"></a>如何做一个逻辑正确但 golang 调度器(1.10)无法正确应对，进而导致无法产生预期结果的程序。调度器如何改进可以解决此问题？</h3></li>
+</ul>
+<p>不会扩栈的死循环在触发 GC 的时候都有可能有问题。1.13 开始引入基于信号的调度。</p>
+<ul>
+<li><h3 id="列出下面操作延迟数量级-1ms-10us或100ns等-，cgo-调用-c-代码，c-调用-go-代码，channel在单线程单-case-的-select-中被选中，high-contention-下对未满的-buffered-channel-的写延迟。"><a href="#列出下面操作延迟数量级-1ms-10us或100ns等-，cgo-调用-c-代码，c-调用-go-代码，channel在单线程单-case-的-select-中被选中，high-contention-下对未满的-buffered-channel-的写延迟。" class="headerlink" title="列出下面操作延迟数量级(1ms, 10us或100ns等)，cgo 调用 c 代码，c 调用 go 代码，channel在单线程单 case 的 select 中被选中，high contention 下对未满的 buffered channel 的写延迟。"></a>列出下面操作延迟数量级(1ms, 10us或100ns等)，cgo 调用 c 代码，c 调用 go 代码，channel在单线程单 case 的 select 中被选中，high contention 下对未满的 buffered channel 的写延迟。</h3></li>
+</ul>
+<p>cgo 基本是几十~100ns 级别。<br>其它需要 bench 一下</p>
+<ul>
+<li><h3 id="如何设计实现一个简单的-goroutine-leak-检测库，可用于在测试运行结束后打印出所测试程序泄露的-goroutine-的-stacktrace-以及-goroutine-被创建的文件名和行号。"><a href="#如何设计实现一个简单的-goroutine-leak-检测库，可用于在测试运行结束后打印出所测试程序泄露的-goroutine-的-stacktrace-以及-goroutine-被创建的文件名和行号。" class="headerlink" title="如何设计实现一个简单的 goroutine leak 检测库，可用于在测试运行结束后打印出所测试程序泄露的 goroutine 的 stacktrace 以及 goroutine 被创建的文件名和行号。"></a>如何设计实现一个简单的 goroutine leak 检测库，可用于在测试运行结束后打印出所测试程序泄露的 goroutine 的 stacktrace 以及 goroutine 被创建的文件名和行号。</h3></li>
+</ul>
+<p>参考 pingcap 的小哥们跑测试前检查一次所有的 g，跑完之后检查一次。然后类似 pprof 可以把全局所有的 g 的 stack 打出来，把那些多出来的 g 的 stack 打印出来应该就行了。</p>
+<ul>
+<li><h3 id="选择三个常见-golang-组件（channel-goroutine-map-sync-Map等），列举它们常见的严重伤害性能的-anti-pattern。"><a href="#选择三个常见-golang-组件（channel-goroutine-map-sync-Map等），列举它们常见的严重伤害性能的-anti-pattern。" class="headerlink" title="选择三个常见 golang 组件（channel, goroutine, [], map, sync.Map等），列举它们常见的严重伤害性能的 anti-pattern。"></a>选择三个常见 golang 组件（channel, goroutine, [], map, sync.Map等），列举它们常见的严重伤害性能的 anti-pattern。</h3></li>
+</ul>
+<p>同时 select 很多 channel 的时候，并发较高时会有性能问题。因为 select 本质是按 chan 地址排序，顺序加锁。lock1-&gt;lock2-&gt;lock3-&gt;lock4<br>活跃 goroutine 数量较多时，会导致全局的延迟不可控。比如 99 分位惨不忍睹。<br>slice append 的时候可能触发扩容，初始 cap 不合适会有大量 growSlice。<br>map hash collision，会导致 overflow bucket 很长，但这种基本不太可能，hash seed 每次启动都是随机的。此外，map 中 key value 超过 128 字节时，会被转为 indirectkey 和 indirectvalue，会对 GC 的扫描阶段造成压力，如果 k v 多，则扫描的 stw 就会很长。<br>sync.Map 有啥性能问题？写多读少的时候？</p>
+<ul>
+<li><h3 id="一个-C-C-程序需要调用一个-go-库，某一-export-了的-go-函数需高频率调用，且调用间隔需要调用根据-go-函数的返回调用其它C-C-函数处理，无法改变调用次序、相互依赖关系的前提下，如何最小化这样高频调用的性能损耗？"><a href="#一个-C-C-程序需要调用一个-go-库，某一-export-了的-go-函数需高频率调用，且调用间隔需要调用根据-go-函数的返回调用其它C-C-函数处理，无法改变调用次序、相互依赖关系的前提下，如何最小化这样高频调用的性能损耗？" class="headerlink" title="一个 C/C++ 程序需要调用一个 go 库，某一 export 了的 go 函数需高频率调用，且调用间隔需要调用根据 go 函数的返回调用其它C/C++函数处理，无法改变调用次序、相互依赖关系的前提下，如何最小化这样高频调用的性能损耗？"></a>一个 C/C++ 程序需要调用一个 go 库，某一 export 了的 go 函数需高频率调用，且调用间隔需要调用根据 go 函数的返回调用其它C/C++函数处理，无法改变调用次序、相互依赖关系的前提下，如何最小化这样高频调用的性能损耗？</h3></li>
+</ul>
+<p>放弃治疗，用 go 重写</p>
+<ul>
+<li><h3 id="不考虑调度器修改本身，仅考虑-runtime-库的-API-扩展，如果要给调度器添加-NUMA-，runtime-库需要添加哪些函数，哪些函数接口必须改动。"><a href="#不考虑调度器修改本身，仅考虑-runtime-库的-API-扩展，如果要给调度器添加-NUMA-，runtime-库需要添加哪些函数，哪些函数接口必须改动。" class="headerlink" title="不考虑调度器修改本身，仅考虑 runtime 库的 API 扩展，如果要给调度器添加 NUMA ，runtime 库需要添加哪些函数，哪些函数接口必须改动。"></a>不考虑调度器修改本身，仅考虑 runtime 库的 API 扩展，如果要给调度器添加 NUMA ，runtime 库需要添加哪些函数，哪些函数接口必须改动。</h3></li>
+</ul>
+<p>不知道。但我觉得提问者是想炫耀自己看过这个文档：<a href="https://docs.google.com/document/u/0/d/1d3iI2QWURgDIsSR6G2275vMeQ_X7w-qxM2Vp7iGwwuM/pub" target="_blank" rel="noopener">numa-aware go scheduler</a>。既然这么了解，那为啥提问者不给官方提个 proposal 并且把这个功能实现了呢？说不定还能进 Go 官方开发组哦~</p>
+<ul>
+<li><h3 id="stw-的-pause-绝大多数情况下在-100us-量级，但有时跳增一个数量级。描述几种可能引起这一现象的触发因素和他们的解决方法。"><a href="#stw-的-pause-绝大多数情况下在-100us-量级，但有时跳增一个数量级。描述几种可能引起这一现象的触发因素和他们的解决方法。" class="headerlink" title="stw 的 pause 绝大多数情况下在 100us 量级，但有时跳增一个数量级。描述几种可能引起这一现象的触发因素和他们的解决方法。"></a>stw 的 pause 绝大多数情况下在 100us 量级，但有时跳增一个数量级。描述几种可能引起这一现象的触发因素和他们的解决方法。</h3></li>
+</ul>
+<p>看不出来想考什么。<br>gc 的触发频率和 stw 时间和系统类型业务逻辑强相关。作者的这个 100us 也不准确，比如我们这里的就是 1ms stw。<br>可能出问题的：<br>map 元素中有大量的指针。<br>请求 qps 突增，导致堆上的小对象太多。sync.Pool 简单重用就好，虽然 sync.Pool 也比较挫。<br>gcwaiting 阶段，有 g 一直不退出。</p>
+<ul>
+<li><h3 id="已经对-GC-做了较充分优化的程序，在无法减小内存使用量的情况下，如何继续显著减低-GC-开销。"><a href="#已经对-GC-做了较充分优化的程序，在无法减小内存使用量的情况下，如何继续显著减低-GC-开销。" class="headerlink" title="已经对 GC 做了较充分优化的程序，在无法减小内存使用量的情况下，如何继续显著减低 GC 开销。"></a>已经对 GC 做了较充分优化的程序，在无法减小内存使用量的情况下，如何继续显著减低 GC 开销。</h3></li>
+</ul>
+<p>已经做了充分优化。要降低 GC 开销。。。。。感觉逻辑有问题呢<br>把能变成值类型的指针类型全变掉减小 gc scan 开销么？不知道想考什么。<br>或者 GOGC=off 弃疗，手动狗头</p>
+<ul>
+<li><h3 id="有一个常见说法是“我能用-channel-简单封装出一个类似-sync-Pool-功能的实现”。在多线程、high-contention、管理不同资源的前提下，两者各方面性能上有哪些显著不同。"><a href="#有一个常见说法是“我能用-channel-简单封装出一个类似-sync-Pool-功能的实现”。在多线程、high-contention、管理不同资源的前提下，两者各方面性能上有哪些显著不同。" class="headerlink" title="有一个常见说法是“我能用 channel 简单封装出一个类似 sync.Pool 功能的实现”。在多线程、high contention、管理不同资源的前提下，两者各方面性能上有哪些显著不同。"></a>有一个常见说法是“我能用 channel 简单封装出一个类似 sync.Pool 功能的实现”。在多线程、high contention、管理不同资源的前提下，两者各方面性能上有哪些显著不同。</h3></li>
+</ul>
+<p>sync.Pool 在每次 gc 时都会清理掉所有对象，在 1.13 之前没什么好办法。<br>具体的区别还是需要 bench 一下。</p>
+<ul>
+<li><h3 id="为何只有一个-time-Sleep-time-Millisecond-循环的-go-程序-CPU-占用显著高于同类C-C-程序？或请详述只有一个-goroutine-的-Go-程序，每次-time-Sleep-time-Millisecond-调用-runtime-所发生的事情。"><a href="#为何只有一个-time-Sleep-time-Millisecond-循环的-go-程序-CPU-占用显著高于同类C-C-程序？或请详述只有一个-goroutine-的-Go-程序，每次-time-Sleep-time-Millisecond-调用-runtime-所发生的事情。" class="headerlink" title="为何只有一个 time.Sleep(time.Millisecond) 循环的 go 程序 CPU 占用显著高于同类C/C++程序？或请详述只有一个 goroutine 的 Go 程序，每次 time.Sleep(time.Millisecond) 调用 runtime 所发生的事情。"></a>为何只有一个 time.Sleep(time.Millisecond) 循环的 go 程序 CPU 占用显著高于同类C/C++程序？或请详述只有一个 goroutine 的 Go 程序，每次 time.Sleep(time.Millisecond) 调用 runtime 所发生的事情。</h3></li>
+</ul>
+<p>time.Sleep requires 7 syscalls，官方有 issue 来说明这件事情：<a href="https://github.com/golang/go/issues/25471" target="_blank" rel="noopener">这里</a><br>C++ 的 time.Sleep 具体操作之后补充~<br>原作者在知乎上给出了其遇到的场景，<a href="https://zhuanlan.zhihu.com/p/45959147" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/45959147</a></p>
+<ul>
+<li><h3 id="一个-Go-程序如果尝试用-fork-创建一个子进程，然后尝试在该子进程中对Go程序维护的一个数据结构串行化以后将串型化结果保存到磁盘。上述尝试会有什么结果？"><a href="#一个-Go-程序如果尝试用-fork-创建一个子进程，然后尝试在该子进程中对Go程序维护的一个数据结构串行化以后将串型化结果保存到磁盘。上述尝试会有什么结果？" class="headerlink" title="一个 Go 程序如果尝试用 fork() 创建一个子进程，然后尝试在该子进程中对Go程序维护的一个数据结构串行化以后将串型化结果保存到磁盘。上述尝试会有什么结果？"></a>一个 Go 程序如果尝试用 fork() 创建一个子进程，然后尝试在该子进程中对Go程序维护的一个数据结构串行化以后将串型化结果保存到磁盘。上述尝试会有什么结果？</h3></li>
+</ul>
+<p>不知道，need test</p>
+<ul>
+<li><h3 id="请列举两种不同的观察-GC-占用-CPU-程度的方法，观察方法无需绝对精确，但需要可实际运用于-profiling-和-optimization。"><a href="#请列举两种不同的观察-GC-占用-CPU-程度的方法，观察方法无需绝对精确，但需要可实际运用于-profiling-和-optimization。" class="headerlink" title="请列举两种不同的观察 GC 占用 CPU 程度的方法，观察方法无需绝对精确，但需要可实际运用于 profiling 和 optimization。"></a>请列举两种不同的观察 GC 占用 CPU 程度的方法，观察方法无需绝对精确，但需要可实际运用于 profiling 和 optimization。</h3></li>
+</ul>
+<p>pprof 的 cpuprofile 火焰图<br>启动时传入环境变量 Debug=gctrace<br>go tool trace，可以看到 p 绑定的 g 实际的 GC 动作和相应时长，以及阻塞时间</p>
+<ul>
+<li><h3 id="GOMAXPROCS-与性能的关系如何？在给定的硬件、程序上，如何设定-GOMAXPROCS-以期获得最佳性能？"><a href="#GOMAXPROCS-与性能的关系如何？在给定的硬件、程序上，如何设定-GOMAXPROCS-以期获得最佳性能？" class="headerlink" title="GOMAXPROCS 与性能的关系如何？在给定的硬件、程序上，如何设定 GOMAXPROCS 以期获得最佳性能？"></a>GOMAXPROCS 与性能的关系如何？在给定的硬件、程序上，如何设定 GOMAXPROCS 以期获得最佳性能？</h3></li>
+</ul>
+<p>一般情况下是 = NumCPU，后续版本官方都计划把这个选项干掉了，不知道提问者问这个问题有什么意义。</p>
+<ul>
+<li><h3 id="一个成熟完备久经优化的-Golang-后台系统，程序只有一个进程，由-golang-实现。其核心处理的部分由数十个-goroutine-负责处理数万-goroutine-发起的请求。由于无法设定-goroutine-调度优先级，使得核心处理的那数十个-goroutine-往往无法及时被调度得到-CPU，进而影响了处理的延迟。有什么改进办法？"><a href="#一个成熟完备久经优化的-Golang-后台系统，程序只有一个进程，由-golang-实现。其核心处理的部分由数十个-goroutine-负责处理数万-goroutine-发起的请求。由于无法设定-goroutine-调度优先级，使得核心处理的那数十个-goroutine-往往无法及时被调度得到-CPU，进而影响了处理的延迟。有什么改进办法？" class="headerlink" title="一个成熟完备久经优化的 Golang 后台系统，程序只有一个进程，由 golang 实现。其核心处理的部分由数十个 goroutine 负责处理数万 goroutine 发起的请求。由于无法设定 goroutine 调度优先级，使得核心处理的那数十个 goroutine 往往无法及时被调度得到 CPU，进而影响了处理的延迟。有什么改进办法？"></a>一个成熟完备久经优化的 Golang 后台系统，程序只有一个进程，由 golang 实现。其核心处理的部分由数十个 goroutine 负责处理数万 goroutine 发起的请求。由于无法设定 goroutine 调度优先级，使得核心处理的那数十个 goroutine 往往无法及时被调度得到 CPU，进而影响了处理的延迟。有什么改进办法？</h3></li>
+</ul>
+<p>参考毛毛哥答案，把发任务和处理任务拆进程。</p>
+<ul>
+<li><h3 id="列举几个近期版本-runtime-性能方面的-regression。"><a href="#列举几个近期版本-runtime-性能方面的-regression。" class="headerlink" title="列举几个近期版本 runtime 性能方面的 regression。"></a>列举几个近期版本 runtime 性能方面的 regression。</h3></li>
+</ul>
+<p>很多，有的很扯。<br>比如 1.9 的时候 http 库的作者自己改代码的时候也没有做 benchmark。<br>个人感觉考这个也没啥意义，翻翻每个版本的更新日志和官方的 benchmark 就能看到，可能提问者是想看看应聘人是否一直在跟进 Go 本身的更新。</p>
 
             </div>
             <hr/>
@@ -509,7 +585,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.cheery.pro/index.html/2019/05/23/Prim%E7%AE%97%E6%B3%95/">https://www.cheery.pro/index.html/2019/05/23/Prim%E7%AE%97%E6%B3%95/</a>
+                    <a href="https://www.cheery.pro/index.html/2020/02/16/GoLang-%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">https://www.cheery.pro/index.html/2020/02/16/GoLang-%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -547,8 +623,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">
-                                    <span class="chip bg-color">数据结构与算法 最小生成树</span>
+                                <a href="/tags/Golang/">
+                                    <span class="chip bg-color">Golang</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%97%AE%E9%A2%98%E4%B8%8E%E5%9B%9E%E7%AD%94/">
+                                    <span class="chip bg-color">问题与回答</span>
                                 </a>
                             
                         </div>
@@ -977,42 +1057,57 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2019/05/23/Huffman%E6%A0%91%E4%B8%8EHuffman%E7%BC%96%E7%A0%81/">
+                <a href="/2020/02/16/GoLang-%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Huffman树与Huffman编码">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="GoLang_的一些问题">
                         
-                        <span class="card-title">Huffman树与Huffman编码</span>
+                        <span class="card-title">GoLang_的一些问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
+1.9/1.10中，time.Now()返回的是什么时间？这样做的决定因素是什么?
+
+是想考 monotonic time 和 wall time 吗？也可能是想考 vdso 的 syscall
+
+golang 的 sync.atomic
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-16
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Cherrison
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/GoLearn/" class="post-category">
+                                    GoLearn
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">数据结构与算法</span>
+                    <a href="/tags/Golang/">
+                        <span class="chip bg-color">Golang</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%97%AE%E9%A2%98%E4%B8%8E%E5%9B%9E%E7%AD%94/">
+                        <span class="chip bg-color">问题与回答</span>
                     </a>
                     
                 </div>
@@ -1026,33 +1121,29 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/05/23/Kruskal%E7%AE%97%E6%B3%95/">
+                <a href="/2019/12/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C%E4%BA%8C/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Kruskal算法">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="计算机网络实验二">
                         
-                        <span class="card-title">Kruskal算法</span>
+                        <span class="card-title">计算机网络实验二</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            计算机网络实验
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-23
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    数据结构与算法基础
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Cherrison
                             
                         </span>
                     </div>
@@ -1060,8 +1151,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">
-                        <span class="chip bg-color">数据结构与算法 最小生成树</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
+                    <a href="/tags/HTTP/">
+                        <span class="chip bg-color">HTTP</span>
                     </a>
                     
                 </div>
